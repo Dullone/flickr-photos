@@ -1,0 +1,12 @@
+<%= form_tag root_path, method: :get do %>
+  id:<%= text_field_tag :id %>
+  <%= submit_tag %>
+<% end %>
+
+<% if @photos %>
+  <% @photos.each do |photo| %>
+    <%= image_tag(get_photo_url(photo)) %>
+  <% end %>
+  <% else %>
+  No photos found.
+<% end %>
